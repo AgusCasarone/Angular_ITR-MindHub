@@ -1,0 +1,61 @@
+<div class=" flex flex-col justify-center  items-center ">
+  <div class="bg-neutral-700/25 p-3 rounded-md text-slate-100 min-w-[30%]">
+    <h1 class="text-center text-3xl font-bold mb-1">
+      {{ formTitle }}
+    </h1>
+    <form action="">
+      <div class="flex flex-col mb-2 gap-1">
+        <label class="text-sm"
+        for="name">
+          Name
+        </label>
+        <input [(ngModel)]="newUser.name"
+        class="rounded-sm p-1 text-neutral-900"
+        name="name"
+        [placeholder]="placeholderName"
+        type="text">
+      </div>
+      <div class="flex flex-col mb-2 gap-1">
+        <label class="text-sm"
+        for="email">
+          Email
+        </label>
+        <input [(ngModel)]="newUser.email"
+        class="rounded-sm p-1 text-neutral-900"
+        name="email"
+        [placeholder]="placeholderEmail"
+        type="email">
+      </div>
+      <div class="flex flex-col mb-2 gap-1">
+        <label class="text-sm"
+        for="password">
+          Password
+        </label>
+        <input [(ngModel)]="newUser.password"
+        class="rounded-sm p-1 text-neutral-900"
+        name="password"
+        [placeholder]="placeholderPassword"
+        type="password">
+      </div>
+      <div class="flex flex-col mb-2 gap-1">
+        <label class="text-sm"
+        for="age">
+          Age
+      </label>
+        <input [(ngModel)]="newUser.age"
+        class="rounded-sm p-1 text-neutral-900"
+        name="age"
+        [placeholder]="placeholderAge"
+        type="number"
+        min="0">
+      </div>
+      <div>
+        <input class="p-1 rounded-sm w-full
+        bg-rose-600 text-gray-50 hover:text-gray-400 hover:bg-rose-700"
+        type="submit"
+        value="Send"
+        (click)="showMessage()">
+      </div>
+    </form>
+  </div>
+</div>
