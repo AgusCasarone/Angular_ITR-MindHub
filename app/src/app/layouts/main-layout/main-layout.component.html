@@ -1,6 +1,6 @@
 <div class="flex flex-col justify-between min-h-screen relative
 bg-slate-50 dark:bg-slate-900 text-gray-600 dark:text-gray-300">
-  <nav class="w-full p-2 py-4 bg-pink-700/25 text-center fixed flex justify-between">
+  <nav class="w-full p-2 py-4 bg-pink-900 text-center fixed flex justify-between">
     <div class="home">
       <a routerLink="/"
       class="p-2 bg-400 text-gray-400 hover:text-blue-300 rounded m-2">
@@ -8,9 +8,17 @@ bg-slate-50 dark:bg-slate-900 text-gray-600 dark:text-gray-300">
       </a>
     </div>
     <div class="menu">
-      <a routerLink="/new"
+      <a routerLink="/login"
       class="p-2 bg-400 text-gray-400 hover:text-blue-300 rounded m-2">
         Log in
+      </a>
+      <a routerLink="/products"
+      class="p-2 bg-400 text-gray-400 hover:text-blue-300 rounded m-2">
+        Products
+      </a>
+      <a routerLink="/profile/:id"
+      class="p-2 bg-400 text-gray-400 hover:text-blue-300 rounded m-2">
+        Profile
       </a>
       <!-- <button (click)="toggleMode()">
         {{ mode }}

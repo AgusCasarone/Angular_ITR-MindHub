@@ -3,7 +3,6 @@ import { MainLayoutComponent } from './layouts/main-layout/main-layout.component
 import path from 'path';
 import { Component } from '@angular/core';
 import { HomeComponent } from './views/home/home.component';
-import { FormViewComponent } from './views/form-view/form-view.component';
 import { NotFoundComponent } from './views/not-found/not-found.component';
 
 export const routes: Routes = [
@@ -18,18 +17,36 @@ export const routes: Routes = [
         component: HomeComponent
       },
       {
-        path: 'new',
+        path: 'login',
         // ! lazyLoading, para que cargue cuando haga falta
         loadComponent: () =>
-          import('./views/form-view/form-view.component')
-            .then(m => m.FormViewComponent)
+          import('./views/login/login.component')
+            .then(m => m.LoginComponent)
       },
       {
-        path: '**',
+        path: 'products',
         loadComponent: () =>
-          import('./views/not-found/not-found.component')
-            .then(m => m.NotFoundComponent)
-      }
+          import('./views/products/products.component')
+            .then(m => m.ProductsComponent)
+      },
+      {
+        path: 'products/:id',
+        loadComponent:() =>
+          import('./views/products-details/products-details.component')
+            .then(m => m.ProductsDetailsComponent)
+      },
+      {
+        path: 'profile/:id',
+        loadComponent: () =>
+          import('./views/profile/profile.component')
+            .then(m => m.ProfileComponent)
+      },
+
+      // ! TIENE QUE IR ULTIMO
+      {
+        path: '**',
+        component: NotFoundComponent
+      },
     ]
   }
 ];

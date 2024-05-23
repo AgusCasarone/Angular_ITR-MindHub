@@ -1,0 +1,20 @@
+<div class="py-7"></div>
+<div class="w-3/4 flex flex-col align-center flex-wrap justify-center">
+  <p class="text-5xl text-bold font-medium"> {{ foundProduct.title }} </p>
+  <p> {{ foundProduct.description }} </p>
+  <p> {{ foundProduct.price }} </p>
+
+  <div class="h-52 rounded align-center p-auto flex flex-row">
+    <div *ngFor="let item of foundProduct.images; let i = index"
+    class="m-3">
+      <img class="max-h-44 rounded text-sm m-auto my-2 p-auto flex flex-row "
+      :src="{{ foundProduct.images[i] }}"
+      alt="{{foundProduct.title}}" />
+    </div>
+  </div>
+
+  <p>Colors: {{ foundProduct.colors }}</p>
+
+  <p *ngIf="foundProduct.onSale"
+  class="bg-red-700 w-fit p-2">ON SALE!</p>
+</div>

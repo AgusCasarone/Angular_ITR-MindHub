@@ -1,6 +1,10 @@
 export interface Product {
-  id: number;
-  name: string;
+  _id: string;
+  title: string;
+  colors: Array<string>;
+  stock: number;
+  images: Array<string>;
+  description?: string;
   price: number;
-  description: string;
+  onSale: boolean;
 }
