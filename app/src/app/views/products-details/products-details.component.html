@@ -1,20 +1,45 @@
 <div class="py-7"></div>
 <div class="w-3/4 flex flex-col align-center flex-wrap justify-center">
-  <p class="text-5xl text-bold font-medium"> {{ foundProduct.title }} </p>
-  <p> {{ foundProduct.description }} </p>
-  <p> {{ foundProduct.price }} </p>
 
-  <div class="h-52 rounded align-center p-auto flex flex-row">
-    <div *ngFor="let item of foundProduct.images; let i = index"
-    class="m-3">
-      <img class="max-h-44 rounded text-sm m-auto my-2 p-auto flex flex-row "
-      :src="{{ foundProduct.images[i] }}"
-      alt="{{foundProduct.title}}" />
+  <div class="header flex flex-row">
+    <div class="images w-48 max-h-96 p-3">
+      <div class="h-40 rounded align-center p-auto flex flex-col">
+        <div *ngFor="let item of foundProduct.images; let i = index"
+        class="m-3">
+          <img class="max-h-40 rounded text-sm m-auto flex flex-col"
+          :src="{{ foundProduct.images[i] }}"
+          alt="{{foundProduct.title}}"
+          (click)="selectImage(i)"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="selected-image w-4/8 p-3">
+      <div class="h-96 w-96 rounded align-center p-auto">
+        <img  class="max-h-96 w-96 rounded text-sm m-auto my-2 p-auto"
+        :src="{{ selectedImage }}"
+        alt="{{foundProduct.title}}">
+      </div>
+    </div>
+
+    <div class="title w-2/8 p-3">
+      <p class="text-5xl text-bold font-medium mb-8"> {{ foundProduct.title }} </p>
+      <p> {{ foundProduct.description }} </p>
+    </div>
+
+    <div class="basic-information p-3">
+      <p class="text-bold text-xl font-medium my-2"> ${{ foundProduct.price }} </p>
+      <div class="punctual-information">
+        <p>Colors: {{ foundProduct.colors }}</p>
+        <p *ngIf="foundProduct.onSale"
+        class="bg-red-700 w-fit p-2">
+          ON SALE!
+        </p>
+      </div>
     </div>
   </div>
 
-  <p>Colors: {{ foundProduct.colors }}</p>
+  <div class="body">
+  </div>
 
-  <p *ngIf="foundProduct.onSale"
-  class="bg-red-700 w-fit p-2">ON SALE!</p>
 </div>

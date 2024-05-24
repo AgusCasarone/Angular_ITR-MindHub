@@ -29,6 +29,8 @@ export class ProductsDetailsComponent implements OnInit {
       onSale: false,
   }
 
+  selectedImage: string = this.foundProduct.images[0];
+
   constructor(
     private route: ActivatedRoute,
   ) { }
@@ -48,5 +50,13 @@ export class ProductsDetailsComponent implements OnInit {
       price: 0,
       onSale: false,
     };
+
+    this.selectedImage = this.foundProduct.images[0];
+
   }
+
+  selectImage(imageId: number) {
+    this.selectedImage = this.foundProduct.images[imageId];
+  }
+
 }
