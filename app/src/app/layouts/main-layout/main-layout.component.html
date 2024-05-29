@@ -1,29 +1,20 @@
 <div class="flex flex-col justify-between min-h-screen relative
 bg-slate-50 dark:bg-slate-900 text-gray-600 dark:text-gray-300">
   <nav class="w-full p-2 py-4 bg-pink-900 text-center fixed flex justify-between">
-    <div class="home">
-      <a routerLink="/"
-      class="p-2 bg-400 text-gray-400 hover:text-blue-300 rounded m-2">
-        Home
-      </a>
-    </div>
-    <div class="menu">
-      <a routerLink="/login"
-      class="p-2 bg-400 text-gray-400 hover:text-blue-300 rounded m-2">
-        Log in
-      </a>
-      <a routerLink="/products"
-      class="p-2 bg-400 text-gray-400 hover:text-blue-300 rounded m-2">
-        Products
-      </a>
-      <a routerLink="/profile/:id"
-      class="p-2 bg-400 text-gray-400 hover:text-blue-300 rounded m-2">
-        Profile
-      </a>
-      <!-- <button (click)="toggleMode()">
-        {{ mode }}
-      </button> -->
-    </div>
+    @for (button of navButtons; track $index; let home = $first) {
+      @if (home) {
+        <a routerLink="{{ button.route}}"
+        class="p-2 bg-400 text-gray-400 text-bold :text-blue-300 rounded mr-auto">
+          {{ button.title }}
+        </a>
+      }
+      @else {
+        <a routerLink="{{ button.route}}"
+        class="p-2 bg-400 text-gray-400 hover:text-blue-300 rounded mx-2">
+          {{ button.title }}
+        </a>
+      }
+    }
   </nav>
 
   <router-outlet/>

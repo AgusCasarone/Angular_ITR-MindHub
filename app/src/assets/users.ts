@@ -6,7 +6,7 @@ export const users: User[] = [
     name: 'Alice Johnson',
     email: 'alice.johnson@example.com',
     password: 'password123',
-    age: 28
+    age: 14
   },
   {
     _id: '2',
@@ -27,7 +27,7 @@ export const users: User[] = [
     name: 'Diana Prince',
     email: 'diana.prince@example.com',
     password: 'wonderwoman',
-    age: 30
+    age: 82
   },
   {
     _id: '5',

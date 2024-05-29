@@ -1,27 +1,12 @@
-<div class="py-7"></div>
-<ul class="h-auto auto-rows-auto flex flex-wrap justify-center">
-  <li *ngFor="let item of products"
-  class="bg-pink-500/50
-  rounded shadow-lg text-center
-  w-1/4 h-80
-  flex flex-col m-3 p-3
-  text-slate-100">
-    <div class="">
-      <p class="text-2xl h-[3em] text-bold font-medium text-gray-900">
-        {{ item.title }}
-      </p>
-      <p class="text-sm text-gray-300">
-        ${{ item.price }}
-      </p>
-    </div>
-    <div class="h-40 rounded align-center p-auto">
-      <img class="max-h-36 rounded text-sm m-auto my-2"
-      :src="{{ item.images[0] }}"
-      alt="{{item.title}}" />
-    </div>
-    <a routerLink="/products/{{ item._id }}"
-    class="bg-black cursor-pointer p-2 rounded hover:ring-2 hover:ring-blue-500">
-      Details
-    </a>
-  </li>
-</ul>
+<div class="py-10"></div>
+<div class="filters auto-rows-auto flex flex-wrap justify-center">
+  <search-input (searching)="onSearch($event)"/>
+</div>
+<div class="auto-rows-auto flex flex-wrap justify-center">
+  @for (item of filteredProducts; track item._id) {
+    <red-card
+    [index]="item._id"
+    [item]="item"
+    [total]="products.length"/>
+  }
+</div>

@@ -38,10 +38,16 @@ export const routes: Routes = [
       {
         path: 'profile/:id',
         loadComponent: () =>
-          import('./views/profile/profile.component')
-            .then(m => m.ProfileComponent)
+          import('./views/user-details/user-details.component')
+            .then(m => m.UserDetailsComponent)
       },
 
+      {
+        path: 'users',
+        loadComponent: () =>
+          import('./views/users/users.component')
+            .then(m => m.UsersComponent)
+      },
       // ! TIENE QUE IR ULTIMO
       {
         path: '**',

@@ -1,0 +1,10 @@
+<div class="py-10"></div>
+<div class="filters auto-rows-auto flex flex-wrap justify-center">
+  <search-input (searching)="onSearch($event)"/>
+</div>
+@for (user of filteredUsers; track $index) {
+  <user-card
+  [routerLink]="['/profile/' + user._id]" routerLinkActive="router-link-active"
+  [user]="user"/>
+}
+

@@ -1,0 +1,23 @@
+<div class="bg-pink-500/50
+rounded shadow-lg text-center
+w-30 h-60 max-w-30 max-h-60
+flex flex-col m-3 p-3
+text-slate-100">
+  <div class="">
+    <p class="text-2xl text-bold font-medium text-gray-900">
+      {{ item.title }}
+    </p>
+    <p class="text-sm text-gray-300">
+      ${{ item.price }}
+    </p>
+  </div>
+  <div class="h-32 rounded align-center p-auto">
+    <img class="max-h-28 rounded text-sm m-auto my-2"
+    :src="{{ item.images[0] }}"
+    alt="{{item.title}}" />
+  </div>
+  <a routerLink="/products/{{ item._id }}"
+  class="bg-black cursor-pointer p-2 rounded hover:ring-2 hover:ring-blue-500">
+    Details
+  </a>
+</div>
